@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tailwind CSS Demo Site</title>
+    <link href="css/main.css" rel="stylesheet" />
+  </head>
+  <body class="flex min-h-screen flex-col">
+    <!-- Navigation -->
+    <header class="bg-gray-800 text-white">
+      <div id="nav_menu"></div>
+    </header>
+
+    <!-- Main content -->
+    <main class="container mx-auto flex-grow px-4 py-8">
+      <h1
+        class="mb-6 text-center text-5xl font-bold tracking-tighter text-sky-500"
+      >
+        Welcome to the Tailwind CSS Demo Site
+      </h1>
+      <p class="mb-8 text-center">
+        This website demonstrates installation and usage of Tailwind CSS as well
+        as VS Code configuration and PostCSS.
+      </p>
+      <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
+        <div class="rounded bg-white p-6 shadow-lg">
+          <h2 class="mb-4 text-2xl font-bold text-gray-800">
+            Tailwind CSS Overview
+          </h2>
+          <p class="text-gray-600">
+            Learn about the utility-first philosophy and the advantages of using
+            Tailwind CSS.
+          </p>
+          <a href="tailwind.html" class="link">Read More</a>
+        </div>
+        <div class="rounded bg-white p-6 shadow-lg">
+          <h2 class="mb-4 text-2xl font-bold text-gray-800">
+            Examples &amp; Demos
+          </h2>
+          <p class="text-gray-600">
+            Explore various examples of components and layouts built with
+            Tailwind CSS.
+          </p>
+          <a href="examples.html" class="link">View Examples</a>
+        </div>
+        <div class="rounded bg-white p-6 shadow-lg">
+          <h2 class="mb-4 text-2xl font-bold text-gray-800">Getting Started</h2>
+          <p class="text-gray-600">
+            Find out how to set up your project with Tailwind CSS, including
+            installation and configuration tips.
+          </p>
+          <a href="configuration.html" class="link">Get Started</a>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <div id="footer"></div>
+
+    <script>
+      fetch("footer.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("footer").innerHTML = data;
+        })
+        .catch((error) => console.error("Error loading footer:", error));
+      fetch("nav.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("nav_menu").innerHTML = data;
+        })
+        .catch((error) => console.log("Error loading navigation:", error));
+    </script>
+  </body>
+</html>

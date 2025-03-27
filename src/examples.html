@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tailwind CSS Examples</title>
+    <link href="css/main.css" rel="stylesheet" />
+  </head>
+  <body class="flex min-h-screen flex-col">
+    <!-- Navigation -->
+    <header class="bg-gray-800 text-white">
+      <div id="nav_menu"></div>
+    </header>
+
+    <!-- Main content -->
+    <main class="container mx-auto flex-grow px-4 py-8">
+      <h1 class="mb-6 text-center text-4xl font-bold text-sky-500">
+        Tailwind CSS Component Examples
+      </h1>
+
+      <!-- Buttons Section -->
+      <section class="mb-8">
+        <h2 class="mb-4 text-2xl font-semibold">Background colours</h2>
+        <div class="mb-4 space-x-4">
+          <button
+            type="button"
+            class="rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-600"
+          >
+            Blue Button
+          </button>
+          <button
+            type="button"
+            class="rounded bg-green-500 px-4 py-2 font-bold text-white hover:bg-green-600"
+          >
+            Green Button
+          </button>
+          <button
+            type="button"
+            class="rounded bg-red-500 px-4 py-2 font-bold text-white hover:bg-red-600"
+          >
+            Red Button
+          </button>
+        </div>
+        <p class="mb-4 text-gray-700">
+          The following snippet utilises background colours for expressive
+          buttons:
+        </p>
+        <pre class="overflow-auto rounded bg-gray-200 p-4 text-sm">
+&lt;button
+  class="rounded <b>bg-blue-500</b> px-4 py-2 font-bold text-white hover:bg-blue-600"
+&gt;
+  Blue Button
+&lt;/button&gt;
+&lt;button
+  class="rounded <b>bg-green-500</b> px-4 py-2 font-bold text-white hover:bg-green-600"
+&gt;
+  Green Button
+&lt;/button&gt;
+&lt;button
+  class="rounded <b>bg-red-500</b> px-4 py-2 font-bold text-white hover:bg-red-600"
+&gt;
+  Red Button
+&lt;/button&gt;
+      </pre
+        >
+      </section>
+
+      <!-- Shadows Section -->
+      <section class="mb-8">
+        <h2 class="mb-4 text-2xl font-semibold">Shadows</h2>
+        <p class="mb-4 text-gray-700">
+          Customisations include colour, size, direction, responsiveness to
+          screen size, and more:
+        </p>
+        <div class="mb-4 grid grid-cols-1 gap-6 md:grid-cols-2">
+          <div class="overflow-hidden rounded bg-white shadow-md md:shadow-lg">
+            <div class="p-4">
+              <h3 class="mb-2 text-xl font-bold">Card Title</h3>
+              <p class="text-gray-700">
+                This is an example card component built with Tailwind CSS. It is
+                responsive and modern.
+              </p>
+              <a href="#" class="link">Read More</a>
+            </div>
+          </div>
+          <div
+            class="overflow-hidden rounded bg-sky-100 shadow-md shadow-sky-300/50 md:shadow-lg"
+          >
+            <div class="p-4">
+              <h3 class="mb-2 text-xl font-bold">Card Title</h3>
+              <p class="text-gray-700">
+                This is another example card demonstrating a clean layout and
+                modern design with more customisation.
+              </p>
+              <a href="#" class="link">Read More</a>
+            </div>
+          </div>
+        </div>
+        <p class="text-gray-700">Code snippet:</p>
+        <pre class="overflow-auto rounded bg-gray-200 p-4 text-sm">
+&lt;div class="overflow-hidden rounded bg-white <b>shadow-md md:shadow-lg</b>"&gt;
+  &lt;div class="p-4"&gt;
+    &lt;h3 class="mb-2 text-xl font-bold"&gt;Card Title&lt;/h3&gt;
+    &lt;p class="text-gray-700"&gt;
+      This is an example card component built with Tailwind CSS. It is
+      responsive and modern.
+    &lt;/p&gt;
+    &lt;a href="#" class="link"&gt;Read More&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div
+  class="overflow-hidden rounded bg-sky-100 <b>shadow-md shadow-sky-300/50 md:shadow-lg</b>"
+&gt;
+&lt;div class="p-4"&gt;
+  &lt;h3 class="mb-2 text-xl font-bold"&gt;Card Title&lt;/h3&gt;
+  &lt;p class="text-gray-700"&gt;
+    This is another example card demonstrating a clean layout and
+    modern design with more customisation.
+  &lt;/p&gt;
+  &lt;a href="#" class="link"&gt;Read More&lt;/a&gt;
+&lt;/div&gt;</pre>
+      </section>
+
+      <!-- Tables section -->
+      <section class="mb-8">
+        <h2 class="mb-4 text-2xl font-semibold">Styled Table</h2>
+        <p class="mb-4 text-gray-700">
+          Tailwind automatically resises table columns to fit contents of its
+          cells with <code>table-auto</code>
+        </p>
+        <div class="overflow-x-auto">
+          <table
+            class="w-full table-auto border-collapse rounded-lg border border-gray-300 shadow-md"
+          >
+            <thead>
+              <tr class="bg-gray-800 text-white">
+                <th class="px-6 py-3 text-left">Name</th>
+                <th class="px-6 py-3 text-left">Role</th>
+                <th class="px-6 py-3 text-left">Department</th>
+                <th class="px-6 py-3 text-left">Joining Date</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200 bg-white">
+              <tr class="hover:bg-gray-100">
+                <td class="px-6 py-4">Alice Johnson</td>
+                <td class="px-6 py-4">Software Engineer</td>
+                <td class="px-6 py-4">Development</td>
+                <td class="px-6 py-4">March 12, 2020</td>
+              </tr>
+              <tr class="hover:bg-gray-100">
+                <td class="px-6 py-4">Michael Smith</td>
+                <td class="px-6 py-4">Product Manager</td>
+                <td class="px-6 py-4">Product</td>
+                <td class="px-6 py-4">July 5, 2018</td>
+              </tr>
+              <tr class="hover:bg-gray-100">
+                <td class="px-6 py-4">Sophia Brown</td>
+                <td class="px-6 py-4">UX Designer</td>
+                <td class="px-6 py-4">Design</td>
+                <td class="px-6 py-4">January 15, 2022</td>
+              </tr>
+              <tr class="hover:bg-gray-100">
+                <td class="px-6 py-4">David Lee</td>
+                <td class="px-6 py-4">Marketing Lead</td>
+                <td class="px-6 py-4">Marketing</td>
+                <td class="px-6 py-4">August 21, 2019</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Animations section -->
+      <section class="mb-8">
+        <h2 class="mb-4 text-2xl font-semibold">Ping Animation</h2>
+        <p class="mb-4 text-gray-700">
+          Tailwind gives access to various animations, including spinning,
+          pinging, pulsing, and bouncing.
+        </p>
+        <h2 class="text-l font-semibold"><code>animate-ping</code></h2>
+        <div class="mt-4 flex items-center">
+          <span class="relative inline-flex">
+            <button
+              type="button"
+              class="inline-flex cursor-not-allowed items-center rounded-md bg-white px-4 py-2 text-sm leading-6 font-semibold text-sky-500 ring-1 ring-gray-900/10 transition duration-150 ease-in-out dark:bg-white/5 dark:ring-white/20"
+            >
+              Notification
+            </button>
+            <span class="absolute top-0 right-0 -mt-1 -mr-1 flex size-3"
+              ><span
+                class="absolute inline-flex h-full w-full animate-ping rounded-full bg-sky-400 opacity-75"
+              ></span
+              ><span
+                class="relative inline-flex size-3 rounded-full bg-sky-500"
+              ></span></span
+          ></span>
+        </div>
+      </section>
+
+      <!-- flex section -->
+      <section class="mb-8">
+        <h2 class="mb-4 text-2xl font-semibold"><code>flex</code></h2>
+        <p class="mb-4 text-gray-700">
+          flex comes with useful features for aligning and assigning space,
+          rendering the process seamless.
+        </p>
+        <div class="mb-6">
+          <h2 class="text-l font-semibold"><code>flex-row</code></h2>
+          <div class="mb-2 flex flex-row space-x-4 rounded border p-4">
+            <div
+              class="flex h-16 w-16 items-center justify-center bg-cyan-500 text-white"
+            >
+              1
+            </div>
+            <div
+              class="flex h-16 w-16 items-center justify-center bg-sky-500 text-white"
+            >
+              2
+            </div>
+            <div
+              class="flex h-16 w-16 items-center justify-center bg-blue-500 text-white"
+            >
+              3
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-6">
+          <h2 class="text-l font-semibold"><code>flex-col</code></h2>
+          <div class="mt-2 flex flex-col space-y-4 rounded border p-4">
+            <div
+              class="flex h-16 w-16 items-center justify-center bg-cyan-500 text-white"
+            >
+              1
+            </div>
+            <div
+              class="flex h-16 w-16 items-center justify-center bg-sky-500 text-white"
+            >
+              2
+            </div>
+            <div
+              class="flex h-16 w-16 items-center justify-center bg-blue-500 text-white"
+            >
+              3
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-6">
+          <h2 class="text-l font-semibold"><code>flex-auto</code></h2>
+          <div class="mt-2 flex space-x-2 rounded border p-4">
+            <div
+              class="flex w-16 items-center justify-center bg-blue-500 p-4 text-white"
+            >
+              Static
+            </div>
+            <div
+              class="flex flex-auto items-center justify-center bg-green-500 p-4 text-white"
+            >
+              flex-auto (fills space)
+            </div>
+            <div
+              class="flex w-16 items-center justify-center bg-red-500 p-4 text-white"
+            >
+              Static
+            </div>
+          </div>
+        </div>
+        <div class="mt-6">
+          <h2 class="text-l font-semibold"><code>flex-none</code></h2>
+          <div class="mt-2 flex space-x-2 rounded border p-4">
+            <div
+              class="flex w-16 items-center justify-center bg-blue-500 p-4 text-white"
+            >
+              Static
+            </div>
+            <div
+              class="flex flex-none items-center justify-center bg-green-500 p-4 text-white"
+            >
+              flex-none (fixed size)
+            </div>
+            <div
+              class="flex flex-auto items-center justify-center bg-red-500 p-4 text-white"
+            >
+              flex-auto (fills space)
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <div id="footer"></div>
+
+    <script>
+      fetch("footer.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("footer").innerHTML = data;
+        })
+        .catch((error) => console.error("Error loading footer:", error));
+      fetch("nav.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("nav_menu").innerHTML = data;
+        })
+        .catch((error) => console.log("Error loading navigation:", error));
+    </script>
+  </body>
+</html>

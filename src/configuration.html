@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tailwind CSS Examples</title>
+    <link href="css/main.css" rel="stylesheet" />
+  </head>
+  <body class="flex min-h-screen flex-col">
+    <!-- Navigation -->
+    <header class="bg-gray-800 text-white">
+      <div id="nav_menu"></div>
+    </header>
+
+    <!-- Main content -->
+    <main class="container mx-auto flex-grow px-4 py-8">
+      <h1 class="mb-6 text-center text-4xl font-bold text-sky-500">
+        Tailwind CSS Configuration
+      </h1>
+
+      <!-- Tailwind CDN -->
+      <section class="mb-8">
+        <h2 class="mb-4 text-2xl font-semibold">
+          Using Tailwind Without Installation
+        </h2>
+        <p class="mb-2 text-gray-700">
+          To test Tailwind in the browser without requiring a build step, use
+          the Play CDN. The Play CDN is not meant for production; rather, it is
+          exclusively meant for development.
+        </p>
+        <pre class="overflow-auto rounded bg-gray-200 p-4 text-sm">
+&lt;script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"&gt;&lt;/script&gt;</pre
+        >
+      </section>
+
+      <!-- Install Tailwind CLI -->
+      <section class="mb-8">
+        <h2 class="mb-4 text-2xl font-semibold">Install Tailwind CLI</h2>
+        <p class="mb-2 text-gray-700">
+          The recommended way to use Tailwind CSS in a project is via the CLI.
+          Install it using npm:
+        </p>
+        <pre class="overflow-auto rounded bg-gray-200 p-4 text-sm">
+npm install -D tailwindcss</pre
+        >
+      </section>
+
+      <!-- Install IntelliSense for VS Code -->
+      <section class="mb-8">
+        <h2 class="mb-4 text-2xl font-semibold">
+          Install Tailwind IntelliSense for VS Code
+        </h2>
+        <p class="mb-2 text-gray-700">
+          To get class name autocompletion, install the official Tailwind CSS
+          IntelliSense extension from the VS Code marketplace.
+        </p>
+        <a
+          href="https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss"
+          target="_blank"
+          class="link"
+          >Download Tailwind IntelliSense</a
+        >
+        <p class="mt-2">
+          For the extension to work you have to create otherwise optional file
+          <code>tailwind.config.js</code>
+        </p>
+        <p>Minimal configuration:</p>
+        <pre class="overflow-auto rounded bg-gray-200 p-4 text-sm">
+module.exports = {
+  content: [],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}</pre
+        >
+      </section>
+
+      <!-- Enable Class sorting with Prettier -->
+      <section class="mb-8">
+        <h2 class="mb-4 text-2xl font-semibold">
+          Enable Class Sorting with Prettier
+        </h2>
+        <p class="mb-2 text-gray-700">
+          Add the following plugin to sort Tailwind classes automatically when
+          formatting code with Prettier:
+        </p>
+        <pre class="overflow-auto rounded bg-gray-200 p-4 text-sm">
+npm install -D prettier prettier-plugin-tailwindcss
+</pre
+        >
+        <p class="mt-2 text-gray-700">
+          Then, create or update your <code>.prettierrc</code> file:
+        </p>
+        <pre class="overflow-auto rounded bg-gray-200 p-4 text-sm">
+{
+  "plugins": ["prettier-plugin-tailwindcss"]
+}</pre
+        >
+      </section>
+
+      <!-- Set up PostCSS -->
+      <section class="mb-8">
+        <h2 class="mb-4 text-2xl font-semibold">Set Up PostCSS</h2>
+        <p class="mb-2 text-gray-700">
+          Simply install PostCSS for Tailwind with:
+        </p>
+        <pre class="mb-2 overflow-auto rounded bg-gray-200 p-4 text-sm">
+npm install -D tailwindcss postcss autoprefixer</pre
+        >
+        <p class="mb-2 text-gray-700">
+          You can add this to <code>package.json</code> to build easily with
+          <code>npm run build:css</code>, assuming files' paths as follows:
+        </p>
+        <pre class="mb-2 overflow-auto rounded bg-gray-200 p-4 text-sm">
+"scripts": {
+  "build:css": "npx @tailwindcss/cli -i ./src/css/style.css -o ./src/css/main.css --minify",
+  "watch:css": "npx @tailwindcss/cli -i ./src/css/style.css -o ./src/css/main.css --watch"
+}</pre
+        >
+        <p class="mb-2 text-gray-700">
+          Note that you'll need to add '<code>@import "tailwindcss";</code>' to
+          your <code>style.css</code> file.
+        </p>
+      </section>
+
+      <!-- Bonus -->
+      <section class="mb-8">
+        <h2 class="mb-4 text-2xl font-semibold">Bonus (Live Preview)</h2>
+        <p class="mb-2 text-gray-700">
+          You can preview your web projects on a local server by using Live
+          Preview!
+        </p>
+        <p>Just get it from VS Code marketplace:</p>
+        <a
+          href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.live-server"
+          target="_blank"
+          class="link"
+          >Download Live Preview</a
+        >
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <div id="footer"></div>
+
+    <script>
+      fetch("footer.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("footer").innerHTML = data;
+        })
+        .catch((error) => console.error("Error loading footer:", error));
+      fetch("nav.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("nav_menu").innerHTML = data;
+        })
+        .catch((error) => console.log("Error loading navigation:", error));
+    </script>
+  </body>
+</html>

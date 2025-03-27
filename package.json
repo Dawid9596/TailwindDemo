@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "@tailwindcss/cli": "^4.0.15"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "cssnano": "^7.0.6",
+    "postcss": "^8.5.3",
+    "postcss-cli": "^11.0.1",
+    "prettier": "^3.5.3",
+    "prettier-plugin-tailwindcss": "^0.6.11",
+    "tailwindcss": "^4.0.15"
+  },
+  "scripts": {
+    "build:css": "npx @tailwindcss/cli -i ./src/css/style.css -o ./src/css/main.css --minify",
+    "watch:css": "npx @tailwindcss/cli -i ./src/css/style.css -o ./src/css/main.css --watch"
+  }
+}

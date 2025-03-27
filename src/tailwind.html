@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tailwind CSS Overview</title>
+    <link href="css/main.css" rel="stylesheet" />
+  </head>
+  <body class="flex min-h-screen flex-col">
+    <!-- Navigation -->
+    <header class="bg-gray-800 text-white">
+      <div id="nav_menu"></div>
+    </header>
+
+    <!-- Main content -->
+    <main class="container mx-auto flex-grow px-4 py-8">
+      <h1 class="mb-6 text-center text-4xl font-bold text-sky-500">
+        What is Tailwind CSS?
+      </h1>
+      <section class="mb-8">
+        <h2 class="mb-4 text-2xl font-semibold">Utility-First Paradigm</h2>
+        <p class="text-gray-700">
+          Tailwind CSS is a utility-first CSS framework that provides a rich
+          collection of utility classes. Instead of writing custom CSS, you
+          build your design directly in your HTML by composing these classes.
+        </p>
+      </section>
+      <section class="mb-8">
+        <h2 class="mb-4 text-2xl font-semibold">Responsive Design</h2>
+        <p class="text-gray-700">
+          Tailwind simplifies creating responsive designs with its mobile-first
+          breakpoints. For example, a class like
+          <code class="rounded bg-gray-200 p-1">md:grid-cols-3</code>
+          can change your layout on medium screens and above.
+        </p>
+        <a href="https://tailwindcss.com/docs/responsive-design" class="link"
+          >Read More</a
+        >
+      </section>
+      <section class="mb-8">
+        <h2 class="mb-4 text-2xl font-semibold">Powerful Customization</h2>
+        <p class="text-gray-700">
+          With Tailwind's configuration file, you can extend the default theme
+          to include custom colors, spacing, and more, making it flexible enough
+          to match any design system.
+        </p>
+        <a href="https://v3.tailwindcss.com/docs/configuration" class="link">
+          Read More</a
+        >
+      </section>
+      <section class="mb-8">
+        <h2 class="mb-4 text-2xl font-semibold">Advanced Techniques</h2>
+        <p class="text-gray-700">
+          Tailwind supports advanced techniques such as component extraction,
+          state variants, and plugins, which allow you to build modern,
+          scalable, and maintainable front-end code.
+        </p>
+      </section>
+    </main>
+
+    <!-- https://medium.com/@AshkanJavadi/tailwind-css-the-modern-utility-first-framework-revolutionizing-web-development-a29b6555b0a3 -->
+
+    <!-- Footer -->
+    <div id="footer"></div>
+
+    <script>
+      fetch("footer.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("footer").innerHTML = data;
+        })
+        .catch((error) => console.error("Error loading footer:", error));
+      fetch("nav.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("nav_menu").innerHTML = data;
+        })
+        .catch((error) => console.log("Error loading navigation:", error));
+    </script>
+  </body>
+</html>
